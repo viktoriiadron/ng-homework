@@ -16,4 +16,12 @@
     <p class="additional-equipment" *ngIf="hall.equipment">
         Additional equipment: {{ hall.equipment }}
     </p>
+    <p class="status">
+        Status: {{hall.isEmpty? 'free for rent' : 'alredy rented'}}
+    </p>
+    <button class="btn"
+    (click)='hall.isEmpty = !hall.isEmpty'
+    >
+        {{hall.isEmpty? 'Rent' : 'Cancel rental'}}
+    </button>
 </div>
