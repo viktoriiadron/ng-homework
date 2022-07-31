@@ -1,0 +1,19 @@
+<p>dance-hall works!</p>
+<div class="halls-section">
+    <h2>{{ hall.name }}</h2>
+    <p class="description">
+        Description:
+    </p>
+    <p>Group training price: 
+        <span class="price">
+            {{ hall.pricePerCustomer | currency: 'UAH '}}
+        </span>
+    </p>
+    <p>Number of people in the group: {{ hall.capacity }}</p>  
+    <p>Hall rent price: 
+        <span class="price">{{ hall.priceForRent | currency: 'UAH ' }}</span>
+    </p>
+    <p class="additional-equipment" *ngIf="hall.equipment">
+        Additional equipment: {{ hall.equipment }}
+    </p>
+</div>

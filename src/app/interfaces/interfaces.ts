@@ -1,22 +1,22 @@
 
-interface User {
+export interface User {
     readonly id: number;
     name: string;
     phoneNumber: string;
     email: string;
 }
 
-interface Admin extends User {
+export interface Admin extends User {
     hasChangePermition: boolean;
 }
 
-interface Customer extends User {
+export interface Customer extends User {
     birth: Date;
     hasSubscription: boolean;
     ammount: number;
 }
 
-interface DanсeHall {
+export interface DanсeHall {
     name: string;
     pricePerCustomer: number;
     priceForRent: number;
@@ -25,7 +25,7 @@ interface DanсeHall {
     equipment?: string[];
 }
 
-interface DanceSchool {
+export interface DanceSchool {
     name: string;
     address: string;
     bankAccount: string;

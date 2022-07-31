@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { purpleHall } from './data/purpleHall';
+import { DanсeHall } from './interfaces/interfaces';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +9,5 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'homework-app';
+  hall: DanсeHall = purpleHall;
 }
