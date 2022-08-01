@@ -17,7 +17,6 @@ export class DanceHallComponent implements OnInit {
 
   public changeRentalStatus(value: boolean) {
     this.hallRent.emit(value);
-    // this.isEmpty = true;
   }
 
 }
