@@ -8,15 +8,16 @@ import { DanсeHall } from 'src/app/interfaces/interfaces';
 })
 export class DanceHallComponent implements OnInit {
   @Input() hall: DanсeHall;
-  //@Output() hallChange: EventEmitter<boolean> = new EventEmitter<boolean>()
+  @Output() hallRent = new EventEmitter<boolean>()
 
   constructor() { }
 
   ngOnInit(): void {
   }
 
-  // public changeRentalStatus() {
-  //   this.hallChange.emit(true);
-  // }
+  public changeRentalStatus(value: boolean) {
+    this.hallRent.emit(value);
+    // this.isEmpty = true;
+  }
 
 }

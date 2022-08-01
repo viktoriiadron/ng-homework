@@ -20,7 +20,7 @@
         Status: {{hall.isEmpty? 'free for rent' : 'alredy rented'}}
     </p>
     <button class="btn"
-    (click)='hall.isEmpty = !hall.isEmpty'
+    (click)='changeRentalStatus(!hall.isEmpty)'
     >
         {{hall.isEmpty? 'Rent' : 'Cancel rental'}}
     </button>

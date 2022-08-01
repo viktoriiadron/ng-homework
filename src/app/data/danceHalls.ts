@@ -7,7 +7,10 @@ export const danceHalls: DanсeHall[] = [
         priceForRent: 200,
         capacity: 15,
         isEmpty: true,
-        equipment: ['steps', 'fitballs']
+        equipment: ['steps', 'fitballs'],
+        changeRental(value: boolean) {
+            this.isEmpty = value
+        }
     },
     {
         name: 'Silver Hall',
@@ -15,7 +18,10 @@ export const danceHalls: DanсeHall[] = [
         priceForRent: 200,
         capacity: 14,
         isEmpty: true,
-        equipment: ['mats']
+        equipment: ['mats'],
+        changeRental(value: boolean) {
+            this.isEmpty = value;
+        }
     },
     {
         name: 'Orange Hall',
@@ -23,6 +29,9 @@ export const danceHalls: DanсeHall[] = [
         priceForRent: 200,
         capacity: 10,
         isEmpty: true,
-        equipment: ['pilons']
+        equipment: ['pilons'],
+        changeRental(value: boolean) {
+            this.isEmpty = value
+        }
     }
 ]
