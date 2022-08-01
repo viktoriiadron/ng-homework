@@ -6,12 +6,12 @@
     </p>
     <p>Group training price: 
         <span class="price">
-            {{ hall.pricePerCustomer | currency: 'UAH '}}
+            {{ hall.pricePerCustomer | uah }}
         </span>
     </p>
     <p>Number of people in the group: {{ hall.capacity }}</p>  
     <p>Hall rent price: 
-        <span class="price">{{ hall.priceForRent | currency: 'UAH ' }}</span>
+        <span class="price">{{ hall.priceForRent | uah }}</span>
     </p>
     <p class="additional-equipment" *ngIf="hall.equipment">
         Additional equipment: {{ hall.equipment }}

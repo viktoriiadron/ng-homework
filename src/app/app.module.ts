@@ -3,11 +3,13 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
 import { DanceHallComponent } from './components/dance-hall/dance-hall.component';
+import { UahPipe } from './pipes/uahPipe';
 
 @NgModule({
   declarations: [
     AppComponent,
-    DanceHallComponent
+    DanceHallComponent,
+    UahPipe
   ],
   imports: [
     BrowserModule
