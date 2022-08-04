@@ -2,7 +2,7 @@ import { DanсeHall } from "../interfaces/interfaces";
 
 export const danceHalls: DanсeHall[] = [
     {
-        name: 'Purple Hall',
+        name: 'Purple',
         pricePerCustomer: 60,
         priceForRent: 200,
         capacity: 15,
@@ -13,7 +13,7 @@ export const danceHalls: DanсeHall[] = [
         }
     },
     {
-        name: 'Silver Hall',
+        name: 'Silver',
         pricePerCustomer: 55,
         priceForRent: 200,
         capacity: 14,
@@ -24,7 +24,7 @@ export const danceHalls: DanсeHall[] = [
         }
     },
     {
-        name: 'Orange Hall',
+        name: 'Orange',
         pricePerCustomer: 60,
         priceForRent: 200,
         capacity: 10,

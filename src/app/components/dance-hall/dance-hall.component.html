@@ -1,5 +1,5 @@
-<div class="halls-section">
-    <h2>{{ hall.name }}</h2>
+<div class="halls-section" [appBacklightColor]="color" (mouseover)="color=hall.name.toLowerCase()">
+    <h2 >{{ hall.name }} Hall</h2>
     <p class="description">
         Description:
     </p>
