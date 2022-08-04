@@ -2,7 +2,7 @@
     [danceSchool]="danceSchool"
 ></app-dance-school>
 <app-dance-hall
-    *ngFor="let hall of danceHalls; let i = index"
+    *ngFor="let hall of danceHalls"
     [hall]="hall"
-    (hallRent)='danceHalls[i].changeRental($event)'
+    (hallRent)='hall.changeRental($event)'
 ></app-dance-hall>
