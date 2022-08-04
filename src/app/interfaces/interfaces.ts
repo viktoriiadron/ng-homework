@@ -23,6 +23,7 @@ export interface DanсeHall {
     capacity: number;
     isEmpty: boolean;
     equipment?: string[];
+    changeRental(value: boolean): void
 }
 
 export interface DanceSchool {

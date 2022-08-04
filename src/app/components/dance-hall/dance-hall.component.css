@@ -5,3 +5,18 @@ h2{
 .price{
 font-weight: bold;
 }
+
+.halls-section {
+    border: 1px solid grey;
+    border-radius: 10px;
+}
+
+.btn {
+    padding: 10px;
+    border: 1px grey;
+    border-radius: 10px;
+}
+
+.btn:hover {
+background: lightblue;
+}

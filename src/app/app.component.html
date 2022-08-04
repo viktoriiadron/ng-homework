@@ -1,3 +1,8 @@
+<app-dance-school
+    [danceSchool]="danceSchool"
+></app-dance-school>
 <app-dance-hall
-[hall]="hall"
+    *ngFor="let hall of danceHalls"
+    [hall]="hall"
+    (hallRent)='hall.changeRental($event)'
 ></app-dance-hall>

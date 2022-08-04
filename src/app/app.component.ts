@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
-import { purpleHall } from './data/purpleHall';
-import { DanсeHall } from './interfaces/interfaces';
+import { DanceSchool, DanсeHall } from './interfaces/interfaces';
+import { danceHalls } from './data/danceHalls';
+import { danceSchool } from './data/danceSchool';
 
 @Component({
   selector: 'app-root',
@@ -9,5 +10,6 @@ import { DanсeHall } from './interfaces/interfaces';
 })
 export class AppComponent {
   title = 'homework-app';
-  hall: DanсeHall = purpleHall;
+  danceHalls: DanсeHall[] = danceHalls;
+  danceSchool: DanceSchool = danceSchool;
 }
