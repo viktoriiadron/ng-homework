@@ -7,7 +7,12 @@ import { DanсeHall } from 'src/app/interfaces/interfaces';
   styleUrls: ['./dance-hall.component.css']
 })
 export class DanceHallComponent implements OnInit {
+
+  color = '';
+  condition = false;
+
   @Input() hall: DanсeHall;
+
   @Output() hallRent = new EventEmitter<boolean>()
 
   constructor() { }
