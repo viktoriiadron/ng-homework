@@ -8,7 +8,7 @@ import { DanсeHall } from 'src/app/interfaces/interfaces';
 })
 export class DanceHallComponent implements OnInit {
 
-  color = 'pink';
+  color = '';
   condition = false;
 
   @Input() hall: DanсeHall;

@@ -5,9 +5,9 @@ import { Directive, ElementRef, HostListener, Input } from '@angular/core';
 })
 export class BacklightColorDirective {
 
-    constructor(private el: ElementRef) {
+  @Input() appBacklightColor = '';
 
-  }
+  constructor(private el: ElementRef) {  }
 
   @HostListener('mouseenter') onMouseEnter() {
     this.backlight(this.appBacklightColor);
@@ -17,10 +17,8 @@ export class BacklightColorDirective {
     this.backlight('');
   }
 
-  @Input() appBacklightColor = '';
-
-    private backlight(color: string) {
-      this.el.nativeElement.style.backgroundColor = color;
-      this.el.nativeElement.style.transition = '.8s'
+  private backlight(color: string) {
+    this.el.nativeElement.style.backgroundColor = color;
+    this.el.nativeElement.style.transition = '.8s'
   }
 }
