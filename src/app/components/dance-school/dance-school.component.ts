@@ -13,13 +13,7 @@ export class DanceSchoolComponent implements OnInit {
 
   @Input() danceSchool: DanceSchool;
 
-  constructor(a: StorageService, b: FilterService, c: SortService) {
-    a.getUsers();
-    a.addUser(a.createID(),'rerg', 'ergerg', 'reger');
-    a.getUsers();
-    b.filterByName('masha');
-    console.log(c.sortByName());
-    console.log(c.sortById());
+  constructor() {
    }
 
   ngOnInit(): void {

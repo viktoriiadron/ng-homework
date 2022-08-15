@@ -13,14 +13,12 @@ export class SortService {
   }
 
   sortByName(): User[] {
-    const sortedUsers = this.store.users.sort(
-      (a: User, b: User) => a.name.toLocaleLowerCase() > b.name.toLocaleLowerCase() ? 1 : -1);
-    return sortedUsers;
+    return this.store.users.sort(
+      (a: User, b: User) => a.name.toLowerCase() > b.name.toLowerCase() ? 1 : -1);
   }
 
   sortById(): User[] {
-    const sortedUsers = this.store.users.sort(
+    return this.store.users.sort(
       (a: User, b: User) => a.id > b.id ? 1 : -1);
-    return sortedUsers;
   }
 }

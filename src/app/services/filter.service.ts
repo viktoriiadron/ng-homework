@@ -15,7 +15,7 @@ export class FilterService {
 
   filterByName(name: string): User[] {
     const nameFilteredUsers = this.store.users.filter(user =>
-      user.name.trim().toLocaleLowerCase() === name.trim().toLocaleLowerCase());
+      user.name.trim().toLowerCase() === name.trim().toLowerCase());
     console.log('filter works')
     return nameFilteredUsers;
   }
