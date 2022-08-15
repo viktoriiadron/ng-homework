@@ -1,9 +1,18 @@
 
 export interface User {
-    readonly id: number;
+    id: number;
     name: string;
     phoneNumber: string;
     email: string;
+}
+
+export class User implements User {
+    constructor(id: number, name: string, phoneNumber: string, email: string) {
+        this.id = id;
+        this.name = name,
+        this.phoneNumber = phoneNumber,
+        this.email = email   
+    }
 }
 
 export interface Admin extends User {
