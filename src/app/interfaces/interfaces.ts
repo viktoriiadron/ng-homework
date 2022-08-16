@@ -1,28 +1,40 @@
 
-export interface User {
+export interface IUser {
     id: number;
     name: string;
     phoneNumber: string;
     email: string;
+    _password: string;
 }
 
-export class User implements User {
-    constructor(id: number, name: string, phoneNumber: string, email: string) {
-        this.id = id;
-        this.name = name,
-        this.phoneNumber = phoneNumber,
-        this.email = email   
-    }
-}
-
-export interface Admin extends User {
+export interface IAdmin extends IUser {
     hasChangePermition: boolean;
 }
 
-export interface Customer extends User {
+export interface ICustomer extends IUser {
     birth: Date;
     hasSubscription: boolean;
     ammount: number;
+}
+
+export class Customer implements ICustomer {
+    constructor(id: number, name: string, phoneNumber: string, email: string, password: string, birth: Date ) {
+        this.id = id;
+        this.name = name,
+        this.phoneNumber = phoneNumber,
+        this.email = email,
+        this._password = password,
+        this.birth = birth,
+        this.ammount = 0
+    }
+    birth: Date;
+    hasSubscription: boolean;
+    ammount: number;
+    id: number;
+    name: string;
+    phoneNumber: string;
+    email: string;
+    _password: string;
 }
 
 export interface DanсeHall {

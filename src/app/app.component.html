@@ -1,11 +1,8 @@
-<app-dance-school
-    [danceSchool]="danceSchool"
-></app-dance-school>
-<div class="halls-wrap">
-    <app-dance-hall
-        *ngFor="let hall of danceHalls"
-        [hall]="hall"
-        (hallRent)="hall.changeRental($event)"
-        appModal>
-    </app-dance-hall>
+<div class="app-wrapper">
+    <app-navigation></app-navigation>
+    <div class="content">
+        <router-outlet></router-outlet>
+    </div>
+    <app-footer></app-footer>
 </div>
+

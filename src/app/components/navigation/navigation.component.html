@@ -1,0 +1,30 @@
+<header class="header">
+    <div class="nav-wrapper">
+        <div class="logo-holder">
+            <a routerLink="/" class="logo-link">
+                <span class="logo">Logo</span>
+            </a>
+        </div>
+        <nav class='nav'>
+            <ul class="nav-ul">
+                <li class="nav-item">
+                    <a routerLink="/" routerLinkActive="nav-active" [routerLinkActiveOptions]="{exact: true}">About</a>
+                </li>
+                <li class="nav-item">
+                    <a routerLink="/halls" routerLinkActive="nav-active">Halls</a>
+                </li>
+                <li class="nav-item">
+                    <a routerLink="/news" routerLinkActive="nav-active">News</a>
+                </li>
+                <li class="nav-item">
+                    <a routerLink="/contacts" routerLinkActive="nav-active">Contacts</a>
+                </li>
+                <li class="nav-item">
+                    <a routerLink="/login" routerLinkActive="nav-active">Log in</a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+</header>
+
+

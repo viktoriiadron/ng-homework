@@ -61,3 +61,12 @@
 .close:after {
     transform: rotate(-45deg);
 }
+
+body {
+    margin: 0;
+}
+
+.content {
+    flex: 1 0 auto;
+    margin-top: 50px;
+}
