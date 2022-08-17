@@ -7,10 +7,7 @@ import { StorageService } from './storage.service';
 })
 export class FilterService { 
 
-  store: StorageService
-
-  constructor(store: StorageService) {
-    this.store = store
+  constructor(private store: StorageService) {
   }
 
   filterByName(name: string): ICustomer[] {

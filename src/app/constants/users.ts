@@ -4,7 +4,7 @@ export const users: ICustomer[] = [
     {
         id: 1,
         name: 'Sonya',
-        phoneNumber: '+312344564',
+        phoneNumber: '+380667896789',
         email: 'sonya@mail.com',
         _password: 'qwerty',
         birth: new Date('1995.03.17'),
@@ -14,8 +14,8 @@ export const users: ICustomer[] = [
     {
         id: 2,
         name: 'Masha',
-        phoneNumber: '+3123463564',
-        email: 'Masha@mail.com',
+        phoneNumber: '+380997876754',
+        email: 'aasha@mail.com',
         _password: 'qwerty',
         birth: new Date('1995.03.17'),
         hasSubscription: false,
@@ -24,8 +24,8 @@ export const users: ICustomer[] = [
         {
         id: 3,
         name: 'Antonina',
-        phoneNumber: '+33462344564',
-        email: 'Antonina@mail.com',
+        phoneNumber: '+380506778905',
+        email: 'antonina@mail.com',
         _password: 'qwerty',
         birth: new Date('1995.03.17'),
         hasSubscription: false,

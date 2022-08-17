@@ -11,7 +11,8 @@ export class LoginPageComponent implements OnInit {
 
   loginForm = new FormGroup({
     phone: new FormControl<string>('', [
-      Validators.required
+      Validators.required,
+      Validators.pattern('^\\+380[0-9]{9}$')
     ]),
     password: new FormControl<string>('', [
       Validators.required
@@ -19,24 +20,27 @@ export class LoginPageComponent implements OnInit {
   })
 
   loginService: LoginService;
+  errorMessege: string | undefined;
 
   get formEnterControl() {
     return this.loginForm.controls.phone && this.loginForm.controls.password as FormControl
-  } 
+  }
 
-  constructor(loginService: LoginService) { 
+  constructor(loginService: LoginService) {
     this.loginService = loginService
   }
 
   ngOnInit(): void {
   }
 
-  submit()  {
-    let phone  = this.loginForm.value.phone;
-    let password  = this.loginForm.value.password;
+  submit() {
+    let phone = this.loginForm.value.phone?.trim();
+    let password = this.loginForm.value.password?.trim();
     if (phone && password) {
-      this.loginService.login(phone, password);
+      let result = this.loginService.login(phone, password);
+      if (!result.loggedIn) {
+        this.errorMessege = result.errorMessege;
+      }
     }
   }
-
 }

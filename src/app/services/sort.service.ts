@@ -6,10 +6,8 @@ import { StorageService } from './storage.service';
   providedIn: 'root'
 })
 export class SortService {
-  store: StorageService
 
-  constructor(store: StorageService) { 
-    this.store = store;
+  constructor(private store: StorageService) { 
   }
 
   sortByName(): ICustomer[] {

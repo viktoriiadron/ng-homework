@@ -3,9 +3,18 @@
     <form  class="login-form" [formGroup]="loginForm" (ngSubmit)="submit()">
         <div class="input-holder">
             <label for="phone">Enter your phone number:</label>
-            <input type="tel" name="phone" id="phone" placeholder="Phone number" class="input"
-                value="+380"
-                formControlName="phone">
+            <input 
+            type="tel" 
+            name="phone" 
+            id="phone" 
+            placeholder="phone number" 
+            class="input"
+            formControlName="phone"
+            >
+            <p
+            class="form-error"
+            *ngIf="loginForm.controls['phone'].invalid && loginForm.controls['phone'].touched"
+            >Phone should be in +380000000000 format</p>
         </div>
         <div class="input-holder">
             <label for="password">Enter your password:</label>
@@ -13,14 +22,19 @@
             formControlName="password">
         </div>
         <div class="button-holder">
-            <button type="submit" class="btn">Log in</button>
+            <button 
+            type="submit" 
+            class="btn"
+            [disabled]="loginForm.invalid"
+            >Log in</button>
         </div>
     </form>
     <p 
     class="form-error"
     *ngIf="formEnterControl.errors && loginForm.touched"
-    >Please fill the input</p>
-    <p class="form-error"></p>
+    >Please fill the inputs</p>
+    <p class="form-error">{{ errorMessege }}</p>
+    <p class="form-success" *ngIf="this.loginService.getCurrentUser()">Successed login</p>
     <span class="registration-offer">
         Don't have account? 
         <a routerLink="registration">Registration</a>

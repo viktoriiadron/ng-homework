@@ -7,7 +7,6 @@ import { LoginService } from './login.service';
   providedIn: 'root'
 })
 export class RegLinkGuard implements CanActivate {
-  loginService: LoginService;
 
   canActivate(
     route: ActivatedRouteSnapshot,
@@ -16,7 +15,6 @@ export class RegLinkGuard implements CanActivate {
     return !this.loginService.getCurrentUser()
   }
 
-  constructor(loginService: LoginService) {
-    this.loginService = loginService;
+  constructor(private loginService: LoginService) {
   }
 }

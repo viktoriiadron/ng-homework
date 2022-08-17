@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { users } from '../constants/users';
-import { ICustomer, Customer } from '../interfaces/interfaces';
+import { ICustomer } from '../interfaces/interfaces';
+import { Customer } from '../components/classes/classes';
 
 @Injectable({
   providedIn: 'root'
