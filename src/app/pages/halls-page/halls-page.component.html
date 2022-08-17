@@ -1,0 +1,6 @@
+<p>halls-page works!</p>
+<app-dance-school [danceSchool]="danceSchool"></app-dance-school>
+<div class="halls-wrap">
+    <app-dance-hall *ngFor="let hall of danceHalls" [hall]="hall" (hallRent)="hall.changeRental($event)" appModal>
+    </app-dance-hall>
+</div>

@@ -1,13 +1,14 @@
 import { Injectable } from '@angular/core';
 import { users } from '../constants/users';
-import { User } from '../interfaces/interfaces';
+import { ICustomer } from '../interfaces/interfaces';
+import { Customer } from '../components/classes/classes';
 
 @Injectable({
   providedIn: 'root'
 })
 export class StorageService {
 
-  public users: User[] = users;
+  public users: ICustomer[] = users;
 
   constructor() { 
   }
@@ -16,12 +17,12 @@ export class StorageService {
     return this.users.length + 1;
   }
 
-  getUsers(): User[] {
+  getUsers(): ICustomer[] {
     console.log(this.users);
     return this.users;
   }
 
-  addUser(id: number, name: string, phoneNumber: string, email: string) {
-    this.users.push(new User(id, name, phoneNumber, email));
+  addUser(id: number, name: string, phoneNumber: string, email: string, password: string, birth: Date) {
+    this.users.push(new Customer(id, name, phoneNumber, email, password, birth));
   }
 }

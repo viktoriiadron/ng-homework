@@ -1,24 +1,22 @@
 import { Injectable } from '@angular/core';
-import { User } from '../interfaces/interfaces';
+import { ICustomer } from '../interfaces/interfaces';
 import { StorageService } from './storage.service';
 
 @Injectable({
   providedIn: 'root'
 })
 export class SortService {
-  store: StorageService
 
-  constructor(store: StorageService) { 
-    this.store = store;
+  constructor(private store: StorageService) { 
   }
 
-  sortByName(): User[] {
+  sortByName(): ICustomer[] {
     return this.store.users.sort(
-      (a: User, b: User) => a.name.toLowerCase() > b.name.toLowerCase() ? 1 : -1);
+      (a: ICustomer, b: ICustomer) => a.name.toLowerCase() > b.name.toLowerCase() ? 1 : -1);
   }
 
-  sortById(): User[] {
+  sortById(): ICustomer[] {
     return this.store.users.sort(
-      (a: User, b: User) => a.id > b.id ? 1 : -1);
+      (a: ICustomer, b: ICustomer) => a.id > b.id ? 1 : -1);
   }
 }

@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { User } from '../interfaces/interfaces';
+import { ICustomer } from '../interfaces/interfaces';
 import { StorageService } from './storage.service';
 
 @Injectable({
@@ -7,20 +7,17 @@ import { StorageService } from './storage.service';
 })
 export class FilterService { 
 
-  store: StorageService
-
-  constructor(store: StorageService) {
-    this.store = store
+  constructor(private store: StorageService) {
   }
 
-  filterByName(name: string): User[] {
+  filterByName(name: string): ICustomer[] {
     const nameFilteredUsers = this.store.users.filter(user =>
       user.name.trim().toLowerCase() === name.trim().toLowerCase());
     console.log('filter works')
     return nameFilteredUsers;
   }
 
-  filterByPhome(phone: string): User[] {
+  filterByPhome(phone: string): ICustomer[] {
     const phoneFilteredUsers = this.store.users.filter(user =>
       user.phoneNumber.trim() === phone.trim());
     return phoneFilteredUsers;

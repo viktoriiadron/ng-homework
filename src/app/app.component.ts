@@ -9,7 +9,5 @@ import { danceSchool } from './data/danceSchool';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'homework-app';
-  danceHalls: DanсeHall[] = danceHalls;
-  danceSchool: DanceSchool = danceSchool;
+
 }
