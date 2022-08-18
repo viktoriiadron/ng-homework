@@ -24,9 +24,8 @@
                 </li>
             </ul>
         </nav>
-        <button (click)="logger()">log</button>
-        <span class="greetings" *ngIf="userName">Hello, {{userName}}</span>
-        <span class="birthday" *ngIf="birthday">Happy birthday!</span>
+        <span class="greetings" *ngIf="currentUser">Hello, {{currentUser}}</span>
+        <span class="birthday" *ngIf="isBirthday">Happy birthday!</span>
     </div>
 </header>
 

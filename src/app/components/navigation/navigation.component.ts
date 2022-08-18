@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { users } from 'src/app/constants/users';
 import { LoginService } from 'src/app/services/login.service';
 
 @Component({
@@ -7,28 +8,15 @@ import { LoginService } from 'src/app/services/login.service';
   styleUrls: ['./navigation.component.css']
 })
 export class NavigationComponent implements OnInit {
-  public userName: string | undefined = this.loginService.getCurrentUser()?.name;
-  public birthday: boolean = this.loginService.isBirthday();
+  public currentUser: string;
+  isBirthday: boolean;
+
+  public userName = this.loginService.currentUserName.subscribe((value) => this.currentUser = value);
+  public birthday = this.loginService.isUserBirthday.subscribe((value) => this.isBirthday = value);
+  //heeeeelp
 
   constructor(private loginService: LoginService) { }
 
   ngOnInit(): void {
   }
-
-  logger() {
-    console.log('hi')
-    if (this.userName) {
-      console.log(this.userName)
-    }
-  }
-
-
-  // isBirthday() {
-  //   let birthDay = new Date(this.loginService.currentUser.birth).getDate();
-  //   let birthMonth = new Date(this.loginService.currentUser.birth).getMonth();
-  //   let currentDay = new Date().getDate();
-  //   let currentMonth = new Date().getMonth();
-  //   birthDay === currentDay && birthMonth === currentMonth ?
-  //     this.birthday = true : this.birthday = false;
-  // }
 }

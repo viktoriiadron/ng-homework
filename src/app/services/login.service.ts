@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { Observable, Subject } from 'rxjs';
 import { users } from '../constants/users';
 import { ICustomer } from '../interfaces/interfaces';
 
@@ -8,6 +9,8 @@ import { ICustomer } from '../interfaces/interfaces';
 export class LoginService {
   public users: ICustomer[] = users;
   public currentUser: ICustomer;
+  public currentUserName = new Subject<string>();
+  public isUserBirthday = new Subject<boolean>();
 
   constructor() { }
 
@@ -15,7 +18,8 @@ export class LoginService {
     let user = this.users.find((user) => user.phoneNumber === phone);
     if (user) {
       if (user._password === password) {
-        this.currentUser = user
+        this.currentUser = user;
+        this.currentUserName.next(user.name);
         return {
           loggedIn: true,
         };
@@ -30,7 +34,6 @@ export class LoginService {
   }
 
   getCurrentUser(): ICustomer | null {
-    console.log(this.currentUser)
     return this.currentUser ? this.currentUser : null
   }
 
@@ -40,7 +43,11 @@ export class LoginService {
     let currentDay = new Date().getDate();
     let currentMonth = new Date().getMonth();
     if (birthDay === currentDay && birthMonth === currentMonth) {
+      this.isUserBirthday.next(true);
       return true;
-    } else return false;
+    } else {
+      this.isUserBirthday.next(false)
+      return false
+    };
   }
 }

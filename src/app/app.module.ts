@@ -17,6 +17,7 @@ import { NavigationComponent } from './components/navigation/navigation.componen
 import { FooterComponent } from './components/footer/footer.component';
 import { RegistrationComponent } from './components/registration/registration.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { httpInterceptorProviders } from './interceptors/interceptorProviders';
 
 @NgModule({
   declarations: [
@@ -41,7 +42,7 @@ import { ReactiveFormsModule } from '@angular/forms';
     RouterModule.forRoot([]),
     ReactiveFormsModule
   ],
-  providers: [],
+  providers: [httpInterceptorProviders],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
