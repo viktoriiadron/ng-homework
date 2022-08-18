@@ -9,6 +9,9 @@ import { LoginService } from 'src/app/services/login.service';
 })
 export class LoginPageComponent implements OnInit {
 
+  errorMessege: string | undefined;
+  isLoggedIn: boolean = !!this.loginService.getCurrentUser();
+
   loginForm = new FormGroup({
     phone: new FormControl<string>('', [
       Validators.required,
@@ -19,15 +22,11 @@ export class LoginPageComponent implements OnInit {
     ])
   })
 
-  loginService: LoginService;
-  errorMessege: string | undefined;
-
   get formEnterControl() {
     return this.loginForm.controls.phone && this.loginForm.controls.password as FormControl
   }
 
-  constructor(loginService: LoginService) {
-    this.loginService = loginService
+  constructor(private loginService: LoginService) {
   }
 
   ngOnInit(): void {
@@ -40,7 +39,7 @@ export class LoginPageComponent implements OnInit {
       let result = this.loginService.login(phone, password);
       if (!result.loggedIn) {
         this.errorMessege = result.errorMessege;
-      }
+      } else this.isLoggedIn = true;
     }
   }
 }

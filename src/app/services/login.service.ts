@@ -8,10 +8,6 @@ import { ICustomer } from '../interfaces/interfaces';
 export class LoginService {
   public users: ICustomer[] = users;
   public currentUser: ICustomer;
-  // public isLoggedIn: {
-  //   loggedIn: boolean,
-  //   errorMessege?: string 
-  // }
 
   constructor() { }
 
@@ -19,7 +15,7 @@ export class LoginService {
     let user = this.users.find((user) => user.phoneNumber === phone);
     if (user) {
       if (user._password === password) {
-        this.currentUser = user;
+        this.currentUser = user
         return {
           loggedIn: true,
         };
@@ -35,6 +31,16 @@ export class LoginService {
 
   getCurrentUser(): ICustomer | null {
     console.log(this.currentUser)
-   return this.currentUser ? this.currentUser : null
+    return this.currentUser ? this.currentUser : null
+  }
+
+  isBirthday(): boolean {
+    let birthDay = new Date(this.currentUser?.birth).getDate();
+    let birthMonth = new Date(this.currentUser?.birth).getMonth();
+    let currentDay = new Date().getDate();
+    let currentMonth = new Date().getMonth();
+    if (birthDay === currentDay && birthMonth === currentMonth) {
+      return true;
+    } else return false;
   }
 }

@@ -70,3 +70,12 @@ body {
     flex: 1 0 auto;
     margin-top: 50px;
 }
+
+.form-error {
+    color: red;
+    font-size: small;
+}
+
+.form-success {
+    color: lightgreen;
+}
