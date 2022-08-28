@@ -33,8 +33,8 @@
     class="form-error"
     *ngIf="formEnterControl.errors && loginForm.touched"
     >Please fill the inputs</p>
-    <p class="form-error">{{ errorMessege }}</p>
-    <p class="form-success" *ngIf="this.loginService.getCurrentUser()">Successed login</p>
+    <p class="form-error" *ngIf="errorMessege">{{ errorMessege }}</p>
+    <p class="form-success" *ngIf="isLoggedIn">Successful login</p>
     <span class="registration-offer">
         Don't have account? 
         <a routerLink="registration">Registration</a>

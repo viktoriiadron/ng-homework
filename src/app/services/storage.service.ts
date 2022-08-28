@@ -22,7 +22,7 @@ export class StorageService {
     return this.users;
   }
 
-  addUser(id: number, name: string, phoneNumber: string, email: string, password: string, birth: Date) {
-    this.users.push(new Customer(id, name, phoneNumber, email, password, birth));
+  addUser(id: number, name: string, phoneNumber: string, email: string, birth: Date, password: string, hasSubscription: boolean) {
+    this.users.push(new Customer(id, name, phoneNumber, email, birth, password, hasSubscription));
   }
 }

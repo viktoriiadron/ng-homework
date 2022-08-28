@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { danceHalls } from 'src/app/data/danceHalls';
 import { danceSchool } from 'src/app/data/danceSchool';
 import { DanceSchool, DanсeHall } from 'src/app/interfaces/interfaces';

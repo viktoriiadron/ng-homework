@@ -17,6 +17,10 @@ import { NavigationComponent } from './components/navigation/navigation.componen
 import { FooterComponent } from './components/footer/footer.component';
 import { RegistrationComponent } from './components/registration/registration.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule } from '@angular/forms';
+import { httpInterceptorProviders } from './interceptors/interceptorProviders';
+import { ClickStopPropagationDirective } from './components/directives/click-stop-propagation.directive';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -33,15 +37,18 @@ import { ReactiveFormsModule } from '@angular/forms';
     LoginPageComponent,
     NavigationComponent,
     FooterComponent,
-    RegistrationComponent
+    RegistrationComponent,
+    ClickStopPropagationDirective
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     RouterModule.forRoot([]),
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    FormsModule,
+    BrowserAnimationsModule
   ],
-  providers: [],
+  // providers: [httpInterceptorProviders],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

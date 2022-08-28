@@ -30,7 +30,8 @@ export class ModalDirective {
     closeButton.classList.add('close');
     modalInfo.classList.add('modal-info');
     rentButton.classList.add('rent-btn');
-    modalInfo.innerHTML = `Group training price: ${this.hall.pricePerCustomer}<br>
+    modalInfo.innerHTML = `<h2>${this.hall.name} Hall</h2>
+    Group training price: ${this.hall.pricePerCustomer} UAH<br>
     Number of people in the group: ${this.hall.capacity}<br>
     Hall rent price: ${this.hall.priceForRent} UAH<br>
     Additional equipment: ${this.hall.equipment?.join(', ')}<br>
@@ -48,7 +49,6 @@ export class ModalDirective {
     event.stopPropagation();
     event.preventDefault();
     const element = this.element.nativeElement.querySelector('.modal');
-    console.log(element)
     element.remove();
   }
 

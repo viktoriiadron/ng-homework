@@ -1,32 +1,82 @@
 <div class="reg-form-wrapper">
     <h2>Please enter the registration form</h2>
-    <form class="reg-form">
+    <form class="reg-form"
+    [formGroup]="registrationFrom"
+    (ngSubmit)="register()"
+    >
         <div class="input-holder">
             <label for="reg-name">Enter your name</label>
-            <input type="text" name="name" id="reg-name" placeholder="name">
+            <input type="text" 
+            name="name" 
+            id="reg-name" 
+            placeholder="name"
+            formControlName="name"
+            >
+            <p class="form-error" *ngIf="registrationFrom.controls['name'].invalid && registrationFrom.controls['name'].touched">
+                Please enter your name
+            </p>
         </div>
         <div class="input-holder">
             <label for="reg-phone">Enter your phone number</label>
-            <input type="text" name="phone" placeholder="phone number" id="reg-phone">
+            <input type="text" name="phone" placeholder="phone number" id="reg-phone"
+            formControlName="phone">
+            <p class="form-error" 
+            *ngIf="registrationFrom.controls['phone'].invalid && registrationFrom.controls['phone'].touched"
+            >
+                Phone should be in +380000000000 format
+            </p>
         </div>
         <div class="input-holder">
             <label for="email">Enter your email</label>
-            <input type="email" name="email" id="email" placeholder="e-mail">
-        </div>
-        <div class="input-holder">
-            <label for="reg-password">Enter your password</label>
-            <input type="password" name="password" placeholder="password" id="reg-password">
+            <input type="email" 
+            name="email" 
+            id="email" 
+            placeholder="e-mail"
+            formControlName="email"
+            >
+            <p class="form-error" 
+            *ngIf="emailValidator()"
+            >
+                Please, enter correct e-mail
+            </p>
         </div>
         <div class="input-holder">
             <label for="birthday">Enter your birthday</label>
-            <input type="date" name="birthday" id="birthday">
+            <input type="date" 
+            name="birthday" 
+            id="birthday"
+            formControlName="birthday"
+            >
+            <p class="form-error" *ngIf="birthdayValidator()">
+                Please enter your birthday
+            </p>
+        </div>
+        <div class="input-holder">
+            <label for="reg-password">Enter your password</label>
+            <input type="text" 
+            name="password" 
+            placeholder="password" 
+            id="reg-password"
+            formControlName="password"
+            >
         </div>
         <div class="input-holder">
             <label for="subscribe">Subscribe for news</label>
-            <input type="checkbox" name="subscribe" id="subscribe" checked>
+            <input type="checkbox" 
+            name="subscribe" 
+            id="subscribe" 
+            formControlName="subscribtion"
+            >
         </div>
         <div class="button-holder">
-            <button class="btn" type="submit">Register</button>
+            <button class="btn" 
+            type="submit"
+            [disabled]="registrationFrom.invalid"
+            >
+                Register
+            </button>
         </div>
     </form>
+    <p class="form-error" *ngIf="registrationErrorMessege"> {{registrationErrorMessege}}</p>
+    <p class="form-success" *ngIf="isRegistered">Successful registration</p>
 </div>
