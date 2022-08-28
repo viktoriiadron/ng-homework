@@ -54,6 +54,7 @@ export class RegistrationComponent implements OnInit {
           this.storage.addUser(this.storage.createID(), name, phoneNumber, email, birth, password, hasSubscription);
           this.isRegistered = true;
           this.registrationErrorMessege = null;
+          this.registrationFrom.reset();
           return null;
         } else return this.registrationErrorMessege = 'User with this email and/or phone number is already exist';
       } else return this.registrationErrorMessege = 'User with this email and/or phone number is already exist';

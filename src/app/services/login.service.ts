@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Observable, Subject } from 'rxjs';
+import { BehaviorSubject, Observable, Subject } from 'rxjs';
 import { users } from '../constants/users';
 import { ICustomer } from '../interfaces/interfaces';
 
@@ -8,9 +8,10 @@ import { ICustomer } from '../interfaces/interfaces';
 })
 export class LoginService {
   public users: ICustomer[] = users;
-  public currentUser: ICustomer;
-  public currentUserName = new Subject<string>();
-  public isUserBirthday = new Subject<boolean>();
+  public currentUser: ICustomer | undefined;
+  public currentUserName: BehaviorSubject<string> = new BehaviorSubject<string>('');
+  public isUserBirthday: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(false);
+  public currentCustomer: Subject<ICustomer> = new Subject<ICustomer> ();
 
   constructor() { }
 
@@ -19,7 +20,10 @@ export class LoginService {
     if (user) {
       if (user._password === password) {
         this.currentUser = user;
+        this.currentCustomer.next(user);
         this.currentUserName.next(user.name);
+        this.isUserBirthday.next(this.isBirthday());
+        this.getCurrentCustomer();
         return {
           loggedIn: true,
         };
@@ -38,16 +42,26 @@ export class LoginService {
   }
 
   isBirthday(): boolean {
-    let birthDay = new Date(this.currentUser?.birth).getDate();
-    let birthMonth = new Date(this.currentUser?.birth).getMonth();
-    let currentDay = new Date().getDate();
-    let currentMonth = new Date().getMonth();
-    if (birthDay === currentDay && birthMonth === currentMonth) {
-      this.isUserBirthday.next(true);
-      return true;
-    } else {
-      this.isUserBirthday.next(false)
-      return false
-    };
+    if (this.currentUser) {
+      let birthDay = new Date(this.currentUser?.birth).getDate();
+      let birthMonth = new Date(this.currentUser?.birth).getMonth();
+      let currentDay = new Date().getDate();
+      let currentMonth = new Date().getMonth();
+      if (birthDay === currentDay && birthMonth === currentMonth) {
+        return true;
+      } else {
+        return false
+      };
+    } else return false;
+  }
+
+  logout() {
+    this.currentUser = undefined;
+    this.currentUserName.next('');
+    this.isUserBirthday.next(false);
+  }
+
+  getCurrentCustomer(): Observable<ICustomer> {
+    return this.currentCustomer;
   }
 }

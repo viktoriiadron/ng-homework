@@ -12,7 +12,7 @@ export class addDataInterceptor implements HttpInterceptor {
     intercept(
         req: HttpRequest<any>,
         next: HttpHandler): Observable<HttpEvent<any>> {
-        const birth = this.loginService.currentUser.birth;
+        const birth = this.loginService.currentUser?.birth;
         const addData = req.clone({
             headers: req.body.push({birthday: birth})
         })

@@ -39,7 +39,11 @@ export class LoginPageComponent implements OnInit {
       let result = this.loginService.login(phone, password);
       if (!result.loggedIn) {
         this.errorMessege = result.errorMessege;
-      } else this.isLoggedIn = true;
+      } else {
+        this.isLoggedIn = true;
+        this.errorMessege = '';
+        this.loginForm.reset();
+      }
     }
   }
 }

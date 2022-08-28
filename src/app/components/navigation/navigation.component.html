@@ -24,8 +24,28 @@
                 </li>
             </ul>
         </nav>
-        <span class="greetings" *ngIf="currentUser">Hello, {{currentUser}}</span>
-        <span class="birthday" *ngIf="isBirthday">Happy birthday!</span>
+        <div class="user-info" *ngIf="userName | async">
+            <span class="greetings user-info-component">Hello, {{userName.getValue()}}!</span>
+            <p class="user-info-component">
+                <span class="birthday" *ngIf="birthday | async">Happy birthday!</span>
+            </p>
+            <p class="user-info-component">
+                Your current balance: {{ customerBalance | currency: 'UAH ' }}
+            </p>
+            <div class="account-wrap">
+                <input 
+                type="number" 
+                placeholder="Enter the sum"
+                [(ngModel)]="ammount"
+                >
+                <button 
+                class="btn" 
+                type="submit"
+                (click)="topUp()"
+                >Top up account</button>
+            </div>
+            <button class="btn" (click)="logout()">Log out</button>
+        </div>
     </div>
 </header>
 
