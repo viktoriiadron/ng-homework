@@ -35,7 +35,7 @@
             formControlName="email"
             >
             <p class="form-error" 
-            *ngIf="registrationFrom.controls['email'].invalid && registrationFrom.controls['email'].touched"
+            *ngIf="emailValidator()"
             >
                 Please, enter correct e-mail
             </p>
@@ -47,7 +47,7 @@
             id="birthday"
             formControlName="birthday"
             >
-            <p class="form-error" *ngIf="registrationFrom.controls['birthday'].invalid && registrationFrom.controls['birthday'].touched">
+            <p class="form-error" *ngIf="birthdayValidator()">
                 Please enter your birthday
             </p>
         </div>

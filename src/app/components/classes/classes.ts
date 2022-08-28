@@ -7,7 +7,7 @@ export class Customer implements ICustomer {
         this.phoneNumber = phoneNumber,
         this.email = email,
         this.birth = birth,
-        this._password = password,
+        this.password = password,
         this.hasSubscription = hasSubscription,
         this.ammount = 0
     }
@@ -18,5 +18,5 @@ export class Customer implements ICustomer {
     name: string;
     phoneNumber: string;
     email: string;
-    _password: string;
+    password: string;
 }

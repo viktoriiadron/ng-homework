@@ -18,7 +18,7 @@ export class LoginService {
   login(phone: string, password: string) {
     let user = this.users.find((user) => user.phoneNumber === phone);
     if (user) {
-      if (user._password === password) {
+      if (user.password === password) {
         this.currentUser = user;
         this.currentCustomer.next(user);
         this.currentUserName.next(user.name);

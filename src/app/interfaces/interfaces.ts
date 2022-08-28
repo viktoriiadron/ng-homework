@@ -4,7 +4,7 @@ export interface IUser {
     name: string;
     phoneNumber: string;
     email: string;
-    _password: string;
+    password: string;
 }
 
 export interface IAdmin extends IUser {

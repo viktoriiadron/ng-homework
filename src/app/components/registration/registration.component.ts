@@ -28,9 +28,7 @@ export class RegistrationComponent implements OnInit {
   }
 
   isUniquePhone(phone: string): boolean {
-    if (this.storage.users.find(user => user.phoneNumber === phone)) {
-      return false;
-    } else return true;
+    return !this.storage.users.find(user => user.phoneNumber === phone);
   }
 
   isUniqueEmail(email: string) {
@@ -60,5 +58,13 @@ export class RegistrationComponent implements OnInit {
       } else return this.registrationErrorMessege = 'User with this email and/or phone number is already exist';
     }
     return null;
+  }
+
+  birthdayValidator(): boolean {
+    return this.registrationFrom.controls['birthday'].invalid && this.registrationFrom.controls['birthday'].touched
+  }
+
+  emailValidator(): boolean {
+    return this.registrationFrom.controls['email'].invalid && this.registrationFrom.controls['email'].touched
   }
 }

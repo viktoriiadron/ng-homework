@@ -6,7 +6,7 @@ export const users: ICustomer[] = [
         name: 'Sonya',
         phoneNumber: '+380667896789',
         email: 'sonya@mail.com',
-        _password: 'qwerty',
+        password: 'qwerty',
         birth: new Date('1995.08.28'),
         hasSubscription: false,
         ammount: 3
@@ -16,7 +16,7 @@ export const users: ICustomer[] = [
         name: 'Masha',
         phoneNumber: '+380997876754',
         email: 'aasha@mail.com',
-        _password: 'qwerty',
+        password: 'qwerty',
         birth: new Date('1995.03.17'),
         hasSubscription: false,
         ammount: 0
@@ -26,7 +26,7 @@ export const users: ICustomer[] = [
         name: 'Antonina',
         phoneNumber: '+380506778905',
         email: 'antonina@mail.com',
-        _password: 'qwerty',
+        password: 'qwerty',
         birth: new Date('1995.03.17'),
         hasSubscription: false,
         ammount: 0
