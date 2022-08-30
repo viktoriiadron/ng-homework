@@ -2,30 +2,41 @@
     <h2 class="title">Log in</h2>
     <form  class="login-form" [formGroup]="loginForm" (ngSubmit)="submit()">
         <div class="input-holder">
-            <label for="phone">Enter your phone number:</label>
-            <input 
-            type="tel" 
-            name="phone" 
-            id="phone" 
-            placeholder="phone number" 
-            class="input"
-            formControlName="phone"
-            >
+            <mat-form-field appearance="fill" class="input-elem">
+                <label for="phone">Enter your phone number:</label>
+                <input 
+                matInput 
+                type="tel" 
+                name="phone" 
+                id="phone" 
+                placeholder="phone number" 
+                class="input"
+                formControlName="phone"
+                >
+            </mat-form-field>
             <p
             class="form-error"
             *ngIf="loginForm.controls['phone'].invalid && loginForm.controls['phone'].touched"
             >Phone should be in +380000000000 format</p>
         </div>
         <div class="input-holder">
-            <label for="password">Enter your password:</label>
-            <input type="password" name="password" id="password" placeholder="password" class="input" 
-            formControlName="password">
+            <mat-form-field appearance="fill" class="input-elem">
+                <label for="password">Enter your password:</label>
+                <input type="password" 
+                name="password" id="password" 
+                placeholder="password" 
+                class="input" 
+                matInput 
+                formControlName="password">
+            </mat-form-field>
         </div>
         <div class="button-holder">
             <button 
             type="submit" 
+            mat-raised-button
             class="btn"
             [disabled]="loginForm.invalid"
+            color="primary"
             >Log in</button>
         </div>
     </form>

@@ -1,0 +1,32 @@
+.input-elem{
+    width: 100%;
+}
+
+.reg-form{
+    min-width: 150px;
+    max-width: 500px;
+    width: 100%;
+}
+
+.input-holder{
+    width: 100%;
+}
+
+.title{
+    text-align: center;
+}
+
+.btn{
+    width: 100%;
+}
+
+.btn:hover {
+    background-color: antiquewhite;
+    color: black;
+    transition: ease-in-out .3s;
+}
+
+.reg-form-wrapper{
+    margin-bottom: 30px;
+    margin-top: 30px;
+}

@@ -33,18 +33,24 @@
                 Your current balance: {{ customerBalance | currency: 'UAH ' }}
             </p>
             <div class="account-wrap">
-                <input 
-                type="number" 
-                placeholder="Enter the sum"
-                [(ngModel)]="ammount"
-                >
+                <mat-form-field appearance="fill" class="input-sum">
+                   <input 
+                    type="number" 
+                    matInput
+                    placeholder="Enter the sum"
+                    [(ngModel)]="ammount"
+                    > 
+                </mat-form-field>
                 <button 
                 class="btn" 
+                mat-button color="primary"
                 type="submit"
                 (click)="topUp()"
                 >Top up account</button>
             </div>
-            <button class="btn" (click)="logout()">Log out</button>
+            <button class="btn"
+             mat-button color="primary"
+             (click)="logout()">Log out</button>
         </div>
     </div>
 </header>

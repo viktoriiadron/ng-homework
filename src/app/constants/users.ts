@@ -7,7 +7,7 @@ export const users: ICustomer[] = [
         phoneNumber: '+380667896789',
         email: 'sonya@mail.com',
         password: 'qwerty',
-        birth: new Date('1995.08.28'),
+        birth: new Date('1995.08.29'),
         hasSubscription: false,
         ammount: 3
     },

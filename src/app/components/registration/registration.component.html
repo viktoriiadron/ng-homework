@@ -1,25 +1,34 @@
 <div class="reg-form-wrapper">
-    <h2>Please enter the registration form</h2>
+    <h2 class="title">Please enter the registration form</h2>
     <form class="reg-form"
     [formGroup]="registrationFrom"
     (ngSubmit)="register()"
     >
         <div class="input-holder">
-            <label for="reg-name">Enter your name</label>
-            <input type="text" 
-            name="name" 
-            id="reg-name" 
-            placeholder="name"
-            formControlName="name"
-            >
+            <mat-form-field appearance="fill" class="input-elem">
+                <label for="reg-name">Enter your name</label>
+                <input type="text" 
+                name="name" 
+                id="reg-name" 
+                placeholder="name"
+                matInput 
+                formControlName="name"
+                >
+            </mat-form-field> 
             <p class="form-error" *ngIf="registrationFrom.controls['name'].invalid && registrationFrom.controls['name'].touched">
                 Please enter your name
             </p>
         </div>
         <div class="input-holder">
-            <label for="reg-phone">Enter your phone number</label>
-            <input type="text" name="phone" placeholder="phone number" id="reg-phone"
-            formControlName="phone">
+            <mat-form-field appearance="fill" class="input-elem">
+                <label for="reg-phone">Enter your phone number</label>
+                <input type="text" 
+                name="phone" 
+                placeholder="phone number" 
+                matInput
+                id="reg-phone"
+                formControlName="phone">
+            </mat-form-field>
             <p class="form-error" 
             *ngIf="registrationFrom.controls['phone'].invalid && registrationFrom.controls['phone'].touched"
             >
@@ -27,13 +36,16 @@
             </p>
         </div>
         <div class="input-holder">
-            <label for="email">Enter your email</label>
-            <input type="email" 
-            name="email" 
-            id="email" 
-            placeholder="e-mail"
-            formControlName="email"
-            >
+            <mat-form-field appearance="fill" class="input-elem">
+                <label for="email">Enter your email</label>
+                <input type="email" 
+                name="email"
+                matInput 
+                id="email" 
+                placeholder="e-mail"
+                formControlName="email"
+                >
+            </mat-form-field>
             <p class="form-error" 
             *ngIf="emailValidator()"
             >
@@ -41,37 +53,48 @@
             </p>
         </div>
         <div class="input-holder">
-            <label for="birthday">Enter your birthday</label>
-            <input type="date" 
-            name="birthday" 
-            id="birthday"
-            formControlName="birthday"
-            >
+            <mat-form-field appearance="fill" class="input-elem">
+                <label for="birthday">Enter your birthday</label>
+                <input
+                matInput [matDatepicker]="picker"
+                id="birthday"
+                name="birthday"
+                formControlName="birthday"
+                >
+                <mat-hint>MM/DD/YYYY</mat-hint>
+                <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                <mat-datepicker #picker></mat-datepicker>
+            </mat-form-field>
             <p class="form-error" *ngIf="birthdayValidator()">
                 Please enter your birthday
             </p>
         </div>
         <div class="input-holder">
-            <label for="reg-password">Enter your password</label>
-            <input type="text" 
-            name="password" 
-            placeholder="password" 
-            id="reg-password"
-            formControlName="password"
-            >
+            <mat-form-field appearance="fill" class="input-elem">
+                <label for="reg-password">Enter your password</label>
+                <input type="text"
+                matInput 
+                name="password" 
+                placeholder="password" 
+                id="reg-password"
+                formControlName="password"
+                >
+            </mat-form-field>
         </div>
         <div class="input-holder">
-            <label for="subscribe">Subscribe for news</label>
-            <input type="checkbox" 
-            name="subscribe" 
+            <mat-checkbox 
+            name="subscribe"
             id="subscribe" 
             formControlName="subscribtion"
-            >
+            > Subscribe
+            </mat-checkbox>
         </div>
         <div class="button-holder">
             <button class="btn" 
+            mat-raised-button
             type="submit"
             [disabled]="registrationFrom.invalid"
+            color="primary"
             >
                 Register
             </button>

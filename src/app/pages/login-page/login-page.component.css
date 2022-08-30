@@ -1,0 +1,26 @@
+.login-form {
+    min-width: 150px;
+    max-width: 500px;
+    width: 100%;
+    margin: 0 auto;
+    margin-top: 30px;
+}
+
+.input-elem{
+    width: 100%;
+}
+
+.title {
+    text-align: center;
+}
+
+.btn {
+    width: 100%;
+    transition: ease-in-out .3s;
+}
+
+.btn:hover {
+background-color: antiquewhite;
+color: black;
+transition: ease-in-out .3s;
+}
