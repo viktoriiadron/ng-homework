@@ -1,5 +1,5 @@
 h2{
-    color: darkgray;
+    color: black;
     margin: 0;
 }
 
@@ -20,5 +20,7 @@ h2{
 }
 
 .btn:hover {
-    background: lightblue;
+    background-color: antiquewhite;
+    color: black;
+    transition: ease-in-out .3s;
 }

@@ -12,12 +12,14 @@
         Status: {{hall.isEmpty? 'free for rent' : 'alredy rented'}}
     </p>
     <button class="btn"
+    mat-button color="primary"
     appClickStopPropagation
     (click)='changeRentalStatus(!hall.isEmpty, hall.priceForRent)'
     >
         {{hall.isEmpty? 'Rent' : 'Cancel rental'}}
     </button>
     <button class="btn"
+    mat-button color="primary"
     appClickStopPropagation
     (click)="pay(hall.pricePerCustomer)"
     >

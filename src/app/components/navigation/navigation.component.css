@@ -63,3 +63,18 @@
 .user-info-component{
     margin: 5px 0;
 }
+
+.btn {
+    width: 100%;
+    transition: ease-in-out .3s;
+}
+
+.btn:hover {
+    background-color: antiquewhite;
+    color: black;
+    transition: ease-in-out .3s;
+}
+
+.input-sum{
+    width: 100%;
+}

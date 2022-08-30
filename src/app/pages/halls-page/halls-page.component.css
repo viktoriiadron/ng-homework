@@ -4,5 +4,7 @@
     justify-content: space-between;
     flex-direction: row;
     align-items: center;
-    padding-top: 50px;
+    padding-top: 150px;
+    padding-left: 50px;
+    padding-right: 50px;
 }

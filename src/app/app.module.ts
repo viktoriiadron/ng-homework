@@ -18,9 +18,16 @@ import { FooterComponent } from './components/footer/footer.component';
 import { RegistrationComponent } from './components/registration/registration.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { FormsModule } from '@angular/forms';
-import { httpInterceptorProviders } from './interceptors/interceptorProviders';
+// import { httpInterceptorProviders } from './interceptors/interceptorProviders';
 import { ClickStopPropagationDirective } from './components/directives/click-stop-propagation.directive';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {MatDatepickerModule} from '@angular/material/datepicker';
+import { MatNativeDateModule } from '@angular/material/core';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
+import { MatButtonModule } from '@angular/material/button';
+import { MatRippleModule } from '@angular/material/core';
+import { MatCheckboxModule } from '@angular/material/checkbox';
 
 @NgModule({
   declarations: [
@@ -38,7 +45,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     NavigationComponent,
     FooterComponent,
     RegistrationComponent,
-    ClickStopPropagationDirective
+    ClickStopPropagationDirective, 
   ],
   imports: [
     BrowserModule,
@@ -46,9 +53,15 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     RouterModule.forRoot([]),
     ReactiveFormsModule,
     FormsModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    MatDatepickerModule,
+    MatNativeDateModule, 
+    MatFormFieldModule,
+    MatInputModule,
+    MatButtonModule,
+    MatRippleModule,
+    MatCheckboxModule
   ],
-  // providers: [httpInterceptorProviders],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
